@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "noEmit": false,
+    // Emit needs real extensions. src/ already imports with .js specifiers; only the
+    // tests and scripts import .ts directly, and they are excluded here.
+    "allowImportingTsExtensions": false,
+    "sourceMap": true
+  },
+  "include": ["src/**/*.ts"]
+}

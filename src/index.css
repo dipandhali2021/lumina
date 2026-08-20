@@ -1,0 +1,85 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #060607;
+  color: #f5f5f7;
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.4);
+  color: #fff;
+}
+
+/* Focus ring cleanup (from reference chat box) */
+*:focus-visible {
+  outline-offset: 0 !important;
+  --ring-offset: 0 !important;
+}
+
+/* Textarea scrollbar (from reference chat box) */
+textarea::-webkit-scrollbar {
+  width: 6px;
+}
+textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+textarea::-webkit-scrollbar-thumb {
+  background-color: #444444;
+  border-radius: 3px;
+}
+textarea::-webkit-scrollbar-thumb:hover {
+  background-color: #555555;
+}
+
+/* Slow Ken Burns drift on the background video */
+@keyframes kenburns {
+  from {
+    transform: scale(1.03);
+  }
+  to {
+    transform: scale(1.14);
+  }
+}
+.video-drift {
+  animation: kenburns 28s ease-in-out infinite alternate;
+}
+
+/*
+ * Height budget for the finished image. The result is sized by this rather than by its
+ * container's width, so a desktop viewport never has to scroll to see the whole thing.
+ * Mobile is deliberately unconstrained (the large px value loses to `100%`): the page
+ * scrolls there, and a full-width image is the point.
+ */
+:root {
+  --result-max-h: 1400px;
+}
+@media (min-width: 768px) {
+  :root {
+    --result-max-h: 38vh;
+  }
+}
+@media (min-width: 1024px) and (min-height: 800px) {
+  :root {
+    --result-max-h: 42vh;
+  }
+}
+@media (min-height: 1000px) {
+  :root {
+    --result-max-h: 48vh;
+  }
+}

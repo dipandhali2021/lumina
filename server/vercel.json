@@ -1,0 +1,8 @@
+{
+  "buildCommand": "echo 'Vercel bundles server.ts directly; no tsc emit needed'",
+  "functions": {
+    "server.ts": {
+      "maxDuration": 300
+    }
+  }
+}

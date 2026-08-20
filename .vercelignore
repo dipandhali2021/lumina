@@ -1,0 +1,4 @@
+# The API is its own Vercel project (deployed from ./server). Excluding it here keeps the
+# frontend upload small and stops Vercel from treating server.ts as an entrypoint.
+server
+dist

@@ -1,0 +1,34 @@
+{
+  "name": "text-to-image-server",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsx --test test/*.test.ts",
+    "db:migrate": "tsx scripts/db-migrate.ts",
+    "relay:test": "tsx scripts/relay-test.ts",
+    "pollinations:test": "tsx scripts/pollinations-test.ts"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "1.1.0",
+    "@vercel/functions": "3.9.3",
+    "cors": "2.8.5",
+    "express": "5.1.0",
+    "express-rate-limit": "8.6.2",
+    "pino": "9.6.0",
+    "uploadthing": "7.7.4",
+    "zod": "3.24.1"
+  },
+  "devDependencies": {
+    "@types/cors": "2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "24.13.3",
+    "pino-pretty": "13.0.0",
+    "tsx": "4.23.12",
+    "typescript": "5.7.3"
+  }
+}
